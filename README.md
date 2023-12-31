@@ -9,7 +9,7 @@
 провести миграции
     python manage.py migrate
 запустить приложение
-    python manage.py runserver
+    python manage.py runserver 
 ```
 Работа с приложением:
 ```
