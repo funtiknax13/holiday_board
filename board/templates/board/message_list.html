@@ -1,0 +1,25 @@
+{% extends 'board/base.html' %}
+{% block title %}
+    С новым годом!
+{% endblock %}
+{% block main %}
+
+     <div class="messages-container">
+         {% for object in object_list %}
+        <div class="message">
+            <div class="message-title">{{ object.text | linebreaks }}</div>
+              {% if object.author %}
+              <div class="message-content">
+                  {{ object.author }}
+              </div>
+              {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="row m-2 justify-content-center">
+        <a href="{% url 'board:create' %}" class="btn btn-primary w-50">Оставить пожелание</a>
+    </div>
+
+
+{% endblock %}

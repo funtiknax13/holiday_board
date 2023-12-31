@@ -1,0 +1,43 @@
+<!doctype  html>
+{% load static %}
+<html  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="{% static 'css/album.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'img/crtree.ico' %}" type="image/png">
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <title>
+      {% block title %}
+      {% endblock%}
+    </title>
+</head>
+<body>
+        {% block main %}
+        {% endblock %}
+
+    <script src="{% static 'js/jSnow.js' %}"></script>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $("body").jSnow({
+                vSize: $(document).height()-50, // Размер области
+                flakes: 300, // Количество снежинок
+                flakeColor: ["#fff"], // Цвет
+                flakeMinSize: 10, // Минимальный размер снежинки
+                flakeMaxSize: 20, // Максимальный размер снежинки
+                fallingSpeedMin: 1, // Минимальная скорость снежинки
+                fallingSpeedMax: 2, // Максимальная скорость снежинки
+                flakeCode:["&bull;"] // Вид снежинки
+            });
+
+        });
+
+    </script>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

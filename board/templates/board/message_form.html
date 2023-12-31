@@ -1,0 +1,25 @@
+{% extends 'board/base.html' %}
+{% block title %}
+Поздравляй!
+    {{ title }}
+{% endblock %}
+{% block main %}
+
+    <div class="row mt-2 justify-content-center ">
+        <div class="col-6 bg-transparent">
+
+            <div class="card text-center">
+              <div class="card-body bg-info">
+                <h1>Оставить пожелание</h1>
+                <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" class="btn btn-primary" value="Отправить">
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
